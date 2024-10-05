@@ -3,37 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Memory Challenger</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: Roboto, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(100, 100, 100);
+        }
+        #banner {
+            border-radius: 20px;
+            padding: 5px;
+            border-style: solid;
+            height: 150px;
+            display: block;
+            margin: 0 auto;
+            width: 600px;
+        }
+        h2 {
+            font-size: 30px;
+            font-family: Roboto, sans-serif;
+            font-weight: bold;
+            color: rgb(100, 100, 100);
+        }
+        #container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        p {
+            font-family: Roboto, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: rgb(60, 60, 60);
+        }
+        blockquote {
+            font-family: Roboto, sans-serif;
+            font-style: italic;
+            color: rgb(70, 70, 70);
+            margin-left: 20px;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Memory Challenge</h1>
-   <img src="static/memory-challenge-banner.png
-     " width="300" height="90">
-   <h2>What is memory challenger ?</h2>
-  <p>
-      <strong>Memory Challenger</strong> is a game designed to strengthen your memory muscle.
-      In today’s fast-paced world, many of us are stuck in the past or focused on the future, 
-      often losing the ability to stay present in the moment. This game helps improve your 
-      presence of mind by challenging your memory in fun, engaging ways.
-   </p>
-  <div id="how-to-play">
-      <h2>How to Play Memory Challenger:</h2>
-      <p>
-          The game starts at a difficulty level with a 3-character length sequence. You have the option 
-          to play with Numbers, Alphabets, or Alphanumeric characters. Choose one from the options below.
-      </p>
-      <p>
-          If you successfully complete the challenge 3 times consecutively, the difficulty level increases 
-          by 1, extending the sequence length. However, if you fail 3 times in a row, the difficulty level 
-          drops to 1, giving you a chance to refocus and sharpen your memory.
-      </p>
-      <p><strong>Keep focus! Keep sharpening your brain.</strong></p>
-      <p>Let’s get your brain ready for the challenge!</p>
+    <div id="container">
+        <h1>Memory Challenger</h1>
+        <img id="banner" src="static/memory-challenge-banner.png" alt="Memory Challenge Banner">
 
-      <!-- Placeholder for famous quotes -->
-      <blockquote>
-          <p>"The mind is everything. What you think, you become." – Buddha</p>
-          <p>"Memory is the treasury and guardian of all things." – Cicero</p>
-      </blockquote>
-  </div>
+        <h2>What is Memory Challenger?</h2>
+        <p>
+            <strong>Memory Challenger</strong> is a game designed to strengthen your memory muscle.
+            In today’s fast-paced world, many of us are stuck in the past or focused on the future, 
+            often losing the ability to stay present in the moment. This game helps improve your 
+            presence of mind by challenging your memory in fun, engaging ways.
+        </p>
+
+        <div id="how-to-play">
+            <h2>How to Play Memory Challenger:</h2>
+            <p>
+                The game starts at a difficulty level with a 3-character length sequence. You have the option 
+                to play with Numbers, Alphabets, or Alphanumeric characters. Choose one from the options below.
+            </p>
+            <p>
+                If you successfully complete the challenge 3 times consecutively, the difficulty level increases 
+                by 1, extending the sequence length. However, if you fail 3 times in a row, the difficulty level 
+                drops to 1, giving you a chance to refocus and sharpen your memory.
+            </p>
+            <p>Let’s get your brain ready for the challenge!</p>
+
+
+            <blockquote>
+                <p>"The mind is everything. What you think, you become." – <strong>Buddha</strong></p>
+                <p>"Memory is the treasury and guardian of all things." – <strong>Cicero</strong></p>
+            </blockquote>
+            <p><strong>Keep focus! Keep sharpening your brain!</strong></p>
+        </div>
+    </div>
 </body>
 </html>
