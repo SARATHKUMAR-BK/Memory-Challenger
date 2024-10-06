@@ -1,23 +1,37 @@
 let correctCount = 0;
-let currentNumber = 0;
-let difficultyLevel = 1;
+let randomValue = 0;
+let difficultyLevel = 3;
+let gameType = "" ;
+
+function generateRandomAlphaNumeric(length,charset) {
+    const characters = charset; // Include numbers
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
 
 // Function to start the game
 function startGame() {
     // Increase the number range based on the difficulty level
-    const maxNumber = 1000 * difficultyLevel; // Increase max number based on difficulty
-    var gameType = document.getElementById("submit").getAttribute("gameType");
+    const maxNumber = 10 ** difficultyLevel; // Increase max number based on difficulty
+     gameType = document.getElementById("submit").getAttribute("gameType");
 
     if (gameType === "number")
     {
-        currentNumber = Math.floor(Math.random() * 9000) + maxNumber;
+        randomValue = Math.floor(Math.random() * 9000) + maxNumber;
+    }
+    else if (gameType === "alphabet")
+    {
+        randomValue = generateRandomAlphaNumeric(difficultyLevel, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
     }
     else
     {
-        
+        randomValue = generateRandomAlphaNumeric(difficultyLevel, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
     }
      // Generate a random number
-    document.getElementById('challenge-number').textContent = currentNumber; // Show number
+    document.getElementById('challenge-number').textContent = randomValue; // Show number
     setTimeout(() => {
         document.getElementById('challenge-number').textContent = '';
         document.getElementById("recall-input").disabled = false;
@@ -31,13 +45,14 @@ function startGame() {
 // Function to check the user's input
 function checkAnswer() {
     var userInput = document.getElementById('recall-input').value;
-  var resultElement = document.getElementById("result");
-    if (parseInt(userInput) === currentNumber) {
+    var resultElement = document.getElementById("result");
+    if (userInput === randomValue.toString()) {
         correctCount++;
-        resultElement.textContent = "Success! You recalled the correct number.";
-    resultElement.className = "success"; // Add success class
-    } else {
-        resultElement.textContent = "Sorry! The number you entered is incorrect.";
+        resultElement.textContent = `Success! You recalled the correct ${gameType}.`;
+        resultElement.className = "success"; // Add success class
+    } 
+    else {
+        resultElement.textContent = `Sorry! The ${gameType} you entered is incorrect. Try again`;
         resultElement.className = "failure";
     }
 
@@ -47,12 +62,17 @@ function checkAnswer() {
     document.getElementById("recall-input").disabled = true;
     document.getElementById("submit").disabled = true;
 
-    if (correctCount >= 1) {
-        alert('You reached 3 correct answers! Increasing difficulty.');
+    if (correctCount >= 3) {
+       // alert('You reached 3 correct answers! Increasing difficulty.');
+        document.getElementById("level-up").textContent = "You reached 3 correct answers! Increasing difficulty.";
         correctCount = 0; // Reset correct answer count
-        difficultyLevel *= 10; // Increase difficulty level
+        difficultyLevel++; // Increase difficulty level
     }
     
+    setTimeout(() => {
+        document.getElementById("level-up").textContent = "";
+        document.getElementById("result").textContent = "";
+    }, 2000);
     // Start the game again
     startGame();
 

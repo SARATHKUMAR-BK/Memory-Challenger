@@ -15,15 +15,15 @@
     <div class="container mt-5" style="border: dashed;padding: 10px;border-radius: 20px;" >
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2>Remember your challenge number:</h2>
+                <h2>Remember your challenge {{gameType}}:</h2>
 
-                <label class="display-4" id="challenge-number" style="border-radius: 20px;border-style: solid;border-color: black;width:350px;margin: auto;font-family:Roboto;height:65px">5785</label>
+                <label class="display-4" id="challenge-number" style="border-radius: 20px;border-style: solid;border-color: black;width:350px;margin: auto;font-family:Roboto;height:65px"></label>
             </div>
         </div>
 
         <div class="row mt-4">
             <div class="col-md-12 text-center">
-                <h2>Recall your challenge number:</h2>
+                <h2>Recall your challenge {{gameType}}:</h2>
                 <input type="text" disabled id="recall-input" placeholder="Enter the {{gameType}}" style="border-radius: 20px;border-style: solid;border-color: black;width:300px;margin: auto;">
             </div>
         </div>
@@ -33,7 +33,17 @@
                 <button class="btn btn-primary" onclick="checkAnswer()" gameType="{{gameType}}" id="submit" disabled>Submit</button>
             </div>
         </div>
-        <p id="result"></p>
+        
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <p id="result"></p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12 text-center">
+                <p id="level-up"></p>
+            </div>
+        </div>
     </div>
 
 

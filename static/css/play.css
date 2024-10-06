@@ -35,7 +35,11 @@ input[type="text"]:focus {
 
 #result {
   display: none;
-  margin-top: 20px;
+  font-size: 18px;
+}
+
+#level-up {
+  display: block;
   font-size: 18px;
 }
 
