@@ -2,7 +2,7 @@ from flask import Flask,render_template
 
 app = Flask(__name__)
 
-gameList = ["number" , "alphabet" , "alphanumeric"]
+gameList = ["number" , "alphabet" , "alphanumeric" , "special character"]
 
 @app.route("/")
 def homepage():
