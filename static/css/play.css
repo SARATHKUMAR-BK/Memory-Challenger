@@ -1,0 +1,49 @@
+h1 {
+  font-size: 40px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(100, 100, 100);
+  margin-top: 20px;
+}
+#banner {
+  border-radius: 20px;
+  padding: 5px;
+  border-style: solid;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+  margin-top: 20px;
+}
+input[type="text"] {
+  width: 300px;          
+  padding: 10px;        
+  font-size: 18px;      
+  border-radius: 5px;  
+  border: 2px solid #ccc; 
+  background-color: #f9f9f9;
+/* Shadow effect */
+  margin-top: 10px;     /* Margin from the top */
+  text-align: center;
+}
+input[type="text"]:focus {
+  outline: none;        /* Remove the default outline */
+  border-color: #007bff; /* Change the border color when focused */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
+}
+
+#result {
+  display: none;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Success and Failure styles */
+.success {
+  color: green;
+}
+
+.failure {
+  color: red;
+}
