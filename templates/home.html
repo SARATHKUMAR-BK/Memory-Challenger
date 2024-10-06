@@ -21,6 +21,7 @@
             display: block;
             margin: 0 auto;
             width: 600px;
+            margin-top: 20px;
         }
         h2 {
             font-size: 30px;
@@ -57,7 +58,7 @@
     </style>
 </head>
 <body>
-    <h1 style="margin-top: 20px;">Memory Challenger</h1>
+    {% include "navbar.html" %}
     <img id="banner" src="static/memory-challenge-banner.png" alt="Memory Challenge Banner">
     <div id="container">
 
@@ -97,12 +98,13 @@
                 <div class="border-bottom" style="margin-bottom: 16px; padding-bottom: 8px;"">
                     <div class="row">
                 <div class="col-9"><h3>{{game | capitalize }}</h3></div>
-                <div class="col-3"><button type="button" class="btn btn-primary" >Let's Play</button></div>
+                <div class="col-3"><a href="/{{game}}" type="button" class="btn btn-primary" >Let's Play</a></div>
                     </div>
                     </div>
             {%endfor%}
 
         </div>
     </div>
+    {% include "footer.html" %}
 </body>
 </html>
